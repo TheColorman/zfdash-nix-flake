@@ -27,7 +27,7 @@
     uv2nix,
     pyproject-nix,
     pyproject-build-systems,
-    ...
+    self,
   }: let
     forAllPkgs = f:
       nixpkgs.lib.genAttrs nixpkgs.lib.systems.flakeExposed (
@@ -44,5 +44,9 @@
       };
       zfdash = self.packages.${pkgs.stdenv.system}.default;
     });
+
+    nixosModules.default = import ./module.nix {
+      inherit (self) outputs;
+    };
   };
 }
