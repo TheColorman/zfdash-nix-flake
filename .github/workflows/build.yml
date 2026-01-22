@@ -25,4 +25,4 @@ jobs:
           name: ${{ matrix.cachixName }}
           authToken: "${{ secrets.CACHIX_AUTH_TOKEN }}"
       - name: Build nix packages
-        run: nix build
+        run: nix build --accept-flake-config
