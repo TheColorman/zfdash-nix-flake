@@ -6,6 +6,13 @@ Nix/NixOS systems, along with a module setting up a systemd service.
 It creates 2 systemd services, a root service where zfdash runs in daemon mode,
 and a dynamic service where zfdash runs in web mode.
 
+This Nix package is built using a very specific revision of nixpkgs, as ZfDash
+has some specific dependency requirements. It is therefore recommended to not
+override the nixpkgs input of this flake, as this will likely break the build.
+The nixpkgs revision used also requires compiling qtwebengine from source, as it
+is not cached by cache.nixos.org. This repo contains a workflow to automate this
+process, uploading the result to the colorman.cachix.org binary cache.
+
 ## Usage
 
 Run ZfDash directly from this repository:
