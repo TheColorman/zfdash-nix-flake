@@ -58,7 +58,7 @@ Install and enable the ZfDash service:
     services.zfdash = {
         enable = true;
         address = "127.0.0.1";
-        port = 8765;
+        port = 5001;
     };
 }
 ```
