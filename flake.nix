@@ -49,4 +49,9 @@
       inherit (self) outputs;
     };
   };
+
+  nixConfig = {
+    extra-substituters = ["https://colorman.cachix.org"];
+    extra-trusted-public-keys = ["colorman.cachix.org-1:HbmIr3Upj+ghnP8EYogEn73eCUSDeFBJ+JoItkw8EbQ="];
+  };
 }
